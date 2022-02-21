@@ -27,10 +27,10 @@ td {
             <th>Community</th>
             <th>Unitary Value</th>
           </thead>
-          <tbody >
+          <tbody data-bind="foreach: key_val">
             <tr> 
-              <td><span ></span>hello</td>
-              <td><span ></span>world</td>
+              <td><span data-bind="text: $data.key" ></span></td>
+              <td><span data-bind="text: $data.value"></span></td>
             </tr>
           </table>
       </div>
