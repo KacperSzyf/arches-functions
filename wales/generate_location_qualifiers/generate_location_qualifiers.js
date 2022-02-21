@@ -10,8 +10,7 @@ function($, ko, FunctionViewModel, chosen, arches) {
             //Params ---
             this.triggering_nodegroups = params.config.triggering_nodegroups;
             //end params
-            //TODO: Change UUID's to live server ones
-            this.triggering_nodegroups(['f58199ea-8ff9-11ec-9340-00155d9326d1'])
+            this.triggering_nodegroups(['e420a6e6-8ff9-11ec-bbf3-00155d9326d1'])
         }//5844718c-7dcc-11ec-a910-00155db3508e
         ,
         template: {

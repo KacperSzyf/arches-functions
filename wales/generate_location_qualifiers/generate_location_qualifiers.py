@@ -23,6 +23,8 @@ details = {
     "component": "views/components/functions/generate_location_qualifiers",
 }
 
+
+#TODO: figure out why renaming broke everything
 #Methods
 def createNewTile(tile):
     '''
@@ -131,6 +133,7 @@ def NRGtoMapsheet(nrg):
 class GenerateLocationQualifiers(BaseFunction):
 
     def save(self, tile, request):
+        print("printing saved")
         if checkIfRefValuesExist(tile):
             print("success")
         else:
