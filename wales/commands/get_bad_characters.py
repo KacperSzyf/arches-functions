@@ -32,7 +32,7 @@ class Command(BaseCommand):
                         print(f'{key} : {tile.data[key]}')
                         dodgy = True
             if dodgy:
-                file.write(f'{res.resourceinstanceid},')
+                file.write(f'{res.resourceinstanceid},\n')
         file.close()
                         
        
