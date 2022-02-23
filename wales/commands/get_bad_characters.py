@@ -19,7 +19,7 @@ class Command(BaseCommand):
     # if its not all resources we could shrink the queryest 
     def handle(self, *args, **options):
         #Pull all edit logs and order time decending by time and exclude system setting changes
-        file = open("dodgy_resources.csv", "a")
+        file = open("resrouces_containing_bad_char.csv", "a")
         resources = Resource.objects.all()
         for res in resources:
             res.load_tiles()
@@ -32,7 +32,7 @@ class Command(BaseCommand):
                         print(f'{key} : {tile.data[key]}')
                         dodgy = True
             if dodgy:
-                file.write(f'{res.resourceinstanceid},')
+                file.write(f'{res.resourceinstanceid},\n')
         file.close()
                         
        
