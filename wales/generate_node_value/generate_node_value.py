@@ -1,5 +1,4 @@
 from datetime import date
-from importlib import resources
 from platform import node
 from site import execsitecustomize
 import uuid
