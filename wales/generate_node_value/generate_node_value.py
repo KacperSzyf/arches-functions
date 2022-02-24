@@ -916,6 +916,7 @@ def createNewTile(keys, source_tile):
     
     #Request new blank tile of resource instance from unitary authority
     target_tile = Tile().get_blank_tile_from_nodegroup_id(unitary_authority, source_tile.resourceinstance_id)
+    target_tile.parenttile_id = source_tile.parenttile_id
     
     #Add UA data to new tile
     target_tile.data[ua_value] = keys[rhs_key]
