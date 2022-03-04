@@ -19,3 +19,14 @@ finally register your function using the following command
 ```
 python manage.py fn register --source '/path/to/function_name.py
 ```
+
+# Demo
+Demo on mature trees, actors Jane, John, admin and annonymous user.
+
+### Scenarios
+
+Rules are set up in the following way:
+- Only John and Admin can see mature trees.
+- Only Jane and admin can see juvenile trees.
+- Annonymous can't see any trees.
+- Admin can see all trees.
