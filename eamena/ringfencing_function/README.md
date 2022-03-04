@@ -14,7 +14,7 @@ place the `.py` file in `functions`
 
 4. Register function
 
-finally register your function using the following comman
+finally register your function using the following command
 
 ```
 python manage.py fn register --source '/path/to/function_name.py
