@@ -27,7 +27,7 @@ Demo on mature trees, actors Jane, John, admin and annonymous user.
 
 Rules are set up in the following way:
 - Only John and Admin can see mature trees.
-![image showing John only being able to see a mature tree](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/admin.png)
+![image showing John only being able to see a mature tree](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/john.png)
 - Only Jane and admin can see juvenile trees.
 - Annonymous can't see any trees.
 - Admin can see all trees.
