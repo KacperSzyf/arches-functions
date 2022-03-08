@@ -1,6 +1,6 @@
 # The function
 
-The function will only apply the rules to newly created resrouces.
+The function will only apply the rules on newly created resrouces.
 
 To make the function work on pre-existing resrouces run the included `resave_all_resource` command.
 
@@ -24,6 +24,13 @@ finally register your function using the following command
 
 ```
 python manage.py fn register --source '/path/to/function_name.py
+```
+
+## Optional `resave_all_resrouces` command
+
+Copy the `resave_all_resrouces` to 
+```
+your/arches/installtion/managment/commands/
 ```
 
 # Demo
