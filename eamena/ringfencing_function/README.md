@@ -1,3 +1,9 @@
+# The function
+
+The function will only apply the rules to newly created resrouces.
+
+To make the function work on pre-existing resrouces run the included `resave_all_resource` command.
+
 # Installation
 
 1. `.htm` 
