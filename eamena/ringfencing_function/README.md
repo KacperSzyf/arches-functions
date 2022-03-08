@@ -33,6 +33,11 @@ Copy the `resave_all_resrouces` to
 your/arches/installtion/managment/commands/
 ```
 
+and run the following 
+```
+python manage.py resave_all_resrouces
+```
+
 # Demo
 Demo on mature trees, actors Jane, John, admin and annonymous user.
 
