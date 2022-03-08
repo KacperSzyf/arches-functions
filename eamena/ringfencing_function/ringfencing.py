@@ -37,17 +37,17 @@ Data required from front-end component:
 """
 
 details = {
-    "name": "EamenaPermissions",
+    "name": "Ringfencing",
     "type": "node",
-    "description": "Just a sample demonstrating node group selection",
+    "description": "Function to control user access based on node value",
     "defaultconfig": {"triggering_nodegroups":[], "rules":[]},
-    "classname": "EamenaPermissions",
-    "component": "views/components/functions/eamena-permissions",
+    "classname": "Ringfencing",
+    "component": "views/components/functions/ringfencing",
     "functionid": "be239b0a-145d-4e27-bb71-beaa855dcc11"
 }
 
 
-class EamenaPermissions(BaseFunction):
+class Ringfencing(BaseFunction):
 
     def get(self):
         raise NotImplementedError
