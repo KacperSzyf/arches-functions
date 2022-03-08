@@ -49,6 +49,6 @@ Rules are set up in the following way:
 - Only Jane can see juvenile trees.
 ![image showing Jane only being able to see a majuvenile tree](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/jane.png)
 - Annonymous can't see any trees.
-![image showing no results for anonymous users](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/anon.png)
+![image showing no results for anonymous users](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/anonymo.png)
 - Admin can see all trees.
 ![image showing all trees for admin](https://github.com/KacperSzyf/arches_functions/blob/main/eamena/ringfencing_function/imags/admin.png)
