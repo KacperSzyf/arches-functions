@@ -63,15 +63,11 @@ class EamenaPermissions(BaseFunction):
         if len(rules) > 0:
             for rule in rules:
                 # Check if tile.data has selectedNode and selectedVal
-                print({"rule": rule,
-                       "data": data})
                 if  data[rule['selectedNode']] and data[rule['selectedNode']] in rule['selectedVal']:
 
                     # Get the resource that is currently being saved
                     resource_instance = models.ResourceInstance.objects.get(pk=tile.resourceinstance_id)
-                    print(vars(resource_instance))
                     resource = Resource.objects.get(pk=tile.resourceinstance_id)
-                    print(vars(resource))
 
                     # Get a dictionary of users id's with ANY restrictions on the resource
                     current_perms = get_restricted_users(resource)
@@ -84,13 +80,8 @@ class EamenaPermissions(BaseFunction):
                   
                     users_to_allow = list(current_restricted_users - new_restricted_users)
                     users_to_restrict = list(new_restricted_users - current_restricted_users)
-
-                    print(current_restricted_users)
-                    print({'to allow': users_to_allow , 'to restrict': users_to_restrict})
             
-                    # print("to restrict", users_to_restrict)
                     for identityModel in (users_to_restrict):# + groups_to_restrict):
-                        print("identtity model", identityModel)
                         # first remove all the current permissions
                         for perm in get_perms(identityModel, resource_instance):
                             remove_perm(perm, identityModel, resource_instance)
@@ -98,7 +89,6 @@ class EamenaPermissions(BaseFunction):
                         assign_perm("no_access_to_resourceinstance", identityModel, resource_instance)
 
                     for identityModel in (users_to_allow): 
-                        print("identtity model", identityModel)
                         # first remove all the current permissions
                         for perm in get_perms(identityModel, resource_instance):
                             remove_perm(perm, identityModel, resource_instance)
