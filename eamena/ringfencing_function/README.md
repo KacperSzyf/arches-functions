@@ -26,6 +26,21 @@ finally register your function using the following command
 python manage.py fn register --source '/path/to/function_name.py
 ```
 
+5. Add a view
+
+Place `userandgroups.py` in `project_name -> views`
+
+6. Urls
+
+In `urls.py` add the following import at the top of the page
+```
+from .views.userandgroups import getUsers
+```
+Finally add the following url pattern to at the top of the `urlpatterns` array
+```
+url(r"^get/users", getUsers.as_view(), name="getUsers"),
+```
+
 ## Optional `resave_all_resrouces` command
 
 Copy the `resave_all_resrouces` to 
