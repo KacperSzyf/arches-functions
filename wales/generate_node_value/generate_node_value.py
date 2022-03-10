@@ -907,7 +907,7 @@ def createNewTile(keys, source_tile):
     '''
     
     #Nodes
-    unitary_authority = '60120f64-9ff2-11ea-a530-000d3a86d704' #Unitary Authority nodegroup uuid
+    unitary_authority = '60120f46-9ff2-11ea-a530-000d3a86d704' #Unitary Authority nodegroup uuid
     ua_value = "60120f46-9ff2-11ea-a530-000d3a86d704" #Unitary Authority's node uuid
     
     #UUID's for the right side of the default.config.keys dictionary 
@@ -916,7 +916,7 @@ def createNewTile(keys, source_tile):
     #Request new blank tile of resource instance from unitary authority
     target_tile = Tile().get_blank_tile_from_nodegroup_id(unitary_authority, source_tile.resourceinstance_id)
     target_tile.parenttile_id = source_tile.parenttile_id
-    
+
     #Add UA data to new tile
     target_tile.data[ua_value] = keys[rhs_key]
 
@@ -962,9 +962,10 @@ def getConcepts(self):
     
 
     for source_subc in source_thesauri.subconcepts: # for each concept in left hand thesauri
-        for target_subc in target_thesauri.subconcepts:# for each concept in right hand thesauri 
-            if target_subc.values[0].value == self.config['keys'][source_subc.values[0].value]: # check whether left hand concept(text) matches default config keys
-                new_keys[source_subc.values[0].id] = target_subc.values[0].id # If match create a new key with lef hand concept UUID and right hand concept UUID
+        if source_subc.values[0].value in self.config['keys']:
+            for target_subc in target_thesauri.subconcepts: #for each concept in right hand thesauri 
+                if target_subc.values[0].value == self.config['keys'][source_subc.values[0].value]: # check whether left hand concept(text) matches default config keys
+                    new_keys[source_subc.values[0].id] = target_subc.values[0].id # If match create a new key with lef hand concept UUID and right hand concept UUID
                 
     return new_keys
 
@@ -979,7 +980,6 @@ class UnitaryFunction(BaseFunction):
         #Variables
         source_tile = tile
         print(f'srouce tile: {vars(source_tile)}')
-        exists = False
 
         #Create target tile 
         target_tile = createNewTile(self.config['keys'], source_tile)
@@ -991,15 +991,13 @@ class UnitaryFunction(BaseFunction):
             
             #For each tile check if Unitary Authority tile already exists
             for tile in target_tiles:
-                if str(tile.nodegroup_id) == '60120f64-9ff2-11ea-a530-000d3a86d704': #Unitary Authority 
+                #if str(tile.nodegroup_id) == '60120f46-9ff2-11ea-a530-000d3a86d704': #Unitary Authority 
                     #If so remove it and add the new one, since there can only be one
-                    tile.delete()
-                    target_tile.save()
-                    return
+                tile.delete()
+                 #   target_tile.save()
+                  #  return
 
-        #If no target tiles exist just save a new tile   
-        if not exists:
-            target_tile.save()
-            
+        #If no target tiles exist just save a new tile
+        target_tile.save()
         return
                 
