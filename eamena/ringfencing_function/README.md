@@ -1,8 +1,8 @@
 # The function
 
-The function will only apply the rules on newly created resrouces.
+The function will only apply the rules on newly created resources.
 
-To make the function work on pre-existing resrouces run the included `resave_all_resource` command.
+To make the function work on pre-existing resources run the included `resave_all_resource` command.
 
 # Installation
 
@@ -12,7 +12,7 @@ place the `.htm` file in `template -> views -> components -> functions`
 
 2. `.js`
 
-placec the `.js` file in `media -> js -> views -> components -> functions`
+place the `.js` file in `media -> js -> views -> components -> functions`
 
 3. `.py`
 
@@ -41,20 +41,20 @@ Finally add the following url pattern to at the top of the `urlpatterns` array
 url(r"^get/users", getUsers.as_view(), name="getUsers"),
 ```
 
-## Optional `resave_all_resrouces` command
+## Optional `resave_all_resources` command
 
-Copy the `resave_all_resrouces` to 
+Copy the `resave_all_resources` to 
 ```
-your/arches/installtion/managment/commands/
+your/arches/installation/management/commands/
 ```
 
 and run the following 
 ```
-python manage.py resave_all_resrouces
+python manage.py resave_all_resources
 ```
 
 # Demo
-Demo on mature trees, actors Jane, John, admin and annonymous user.
+Demo on mature trees, actors Jane, John, admin and anonymous user.
 
 ### Scenarios
 
